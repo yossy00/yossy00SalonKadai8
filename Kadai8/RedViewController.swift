@@ -16,15 +16,13 @@ class RedViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         sliderValue.value = delegate.sharedValue
-        valueLabel.text = delegate.sharedString
-       
-    }   
+        valueLabel.text = String(delegate.sharedValue)
+    }
 
     @IBAction func slider(_ sender: Any) {
         let num1 = sliderValue.value
         valueLabel.text = String(num1)
         delegate.sharedValue = sliderValue.value
-        delegate.sharedString = valueLabel.text!
     }    
 }
 
